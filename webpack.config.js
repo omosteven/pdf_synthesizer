@@ -59,3 +59,5 @@ function getHtmlPlugins(chunks) {
 }
 
 //    "build": "react-scripts build",
+// 
+// "build": "webpack --config webpack.config.js",
