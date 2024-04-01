@@ -10,22 +10,31 @@
   flex-direction: column;
   justify-content: center;
 
-//   height: 90%;
-//   width: 90%;
-//   margin-left: 5%;
-//   margin-right: 5%;
   border-radius: 15px;
-//   margin-top: 5vh;
-//   position: absolute;
+
   h1 {
     color: white;
+    text-align: center;
+    @media screen and (max-width: $medium-screen) {
+      font-size: 24px;
+      width: 90%;
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: $small-screen) {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
   }
+
   .file-input {
     label {
-      background-color: $primary-color;
+      background-color: rgba($secondary-color, 0.2);
       border: none;
       color: white;
       font-weight: bold;
+      width: 10rem;
+      text-align: center;
+      border-radius: 5px;
     }
   }
 }

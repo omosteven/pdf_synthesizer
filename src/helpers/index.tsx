@@ -1,21 +1,32 @@
 // @ts-nocheck
 import pdfToText from "react-pdftotext";
 
-export const convertFileToBase64 = (file: File) => {
+export const convertFileToBase64 = (
+  file: File,
+  callbackFunc?: Function,
+  callbackError?: Function
+) => {
   var reader = new FileReader();
+
   reader.readAsDataURL(file);
+
   reader.onload = function () {
-    return reader.result;
-    // console.log(reader.result);
+    callbackFunc?.(reader.result, file);
   };
+
   reader.onerror = function (error) {
-    console.log("Error: ", error);
+    callbackError?.(error);
   };
-  return reader;
 };
 
-export const extractText = (file: any, setPdfText: Function) => {
-  pdfToText(file)
-    .then((text) => setPdfText(text))
-    .catch((error) => console.error("Failed to extract text from pdf"));
+export const extractText = (file: any, callback: Function) => {
+  try {
+    pdfToText(file)
+      .then((text) => {
+        callback(text, true);
+      })
+      .catch((error) => callback(text, false, error));
+  } catch (e) {
+    callback(text, false, e);
+  }
 };

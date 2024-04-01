@@ -1,0 +1,61 @@
+@import "src/components/ui/__variables";
+
+.tools-list {
+  width: 100%;
+  height: 100%;
+  border: 0.5px solid $primary-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+
+  h1 {
+    color: white;
+  }
+  p {
+    color: white;
+    strong {
+      color: $secondary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    @media screen and (max-width: $medium-screen) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      gap: 12px;
+    }
+    @media screen and (max-width: $small-screen) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      margin-top: 0px;
+    }
+    p {
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: $small-screen) {
+    h1 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      margin-top: 0px;
+    }
+    p {
+      width: 90%;
+      text-align: center;
+    }
+  }
+}

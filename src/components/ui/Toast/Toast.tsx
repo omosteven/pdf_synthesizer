@@ -1,5 +1,5 @@
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 export const Toast = (content: string) => {
-  return toast(content);
+  return (content);
 };

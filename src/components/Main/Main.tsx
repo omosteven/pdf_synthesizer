@@ -1,28 +1,31 @@
 import { useState } from "react";
-import FileUploadView from "./FileUploadView/FileUploadView";
-import "./Main.scss";
-import ViewPDF from "./ViewPDF/ViewPDF";
-import { PDF_PROCESSING_STAGES } from "./enum";
+import ToolsList from "./ToolsList/ToolsList";
+import PdfToAudio from "./PdfToAudio/PdfToAudio";
 
-const { PREVIEW_PDF, UPLOAD_PDF } = PDF_PROCESSING_STAGES;
+import { PROCESSING_STAGES } from "./enum";
+
+import "./Main.scss";
+
+const { CHOOSE_TOOL, WEB_TO_AUDIO, WEB_TO_PDF, PDF_TO_AUDIO, AUDIO_TO_PDF } =
+  PROCESSING_STAGES;
 
 const Main = () => {
-  const [stage, setStage] = useState<any>(UPLOAD_PDF);
-  const [fileData, setFileData] = useState<any>();
-  const [actualFile, setActualFile] = useState<File>();
+  const [stage, setStage] = useState<any>(CHOOSE_TOOL);
 
-  const handlePreviewPDF = (fileBase64: any, file: File) => {
-    setActualFile(file);
-    setFileData(fileBase64);
-    setStage(PREVIEW_PDF);
+  const handlePickTool = (pickedTool: string) => {
+    setStage(pickedTool);
   };
 
   const renderBasedOnStage = () => {
     switch (stage) {
-      case UPLOAD_PDF:
-        return <FileUploadView handlePreviewPDF={handlePreviewPDF} />;
-      case PREVIEW_PDF:
-        return <ViewPDF fileData={fileData} actualFile={actualFile} />;
+      case CHOOSE_TOOL:
+        return <ToolsList handlePickTool={handlePickTool} />;
+      case PDF_TO_AUDIO:
+        return <PdfToAudio />;
+      case WEB_TO_AUDIO:
+      case WEB_TO_PDF:
+      case AUDIO_TO_PDF:
+        return "";
       default:
         return "";
     }
