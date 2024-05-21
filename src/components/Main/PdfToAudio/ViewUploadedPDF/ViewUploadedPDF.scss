@@ -28,5 +28,118 @@
       color: white;
       cursor: pointer;
     }
+
+    .custom-select {
+      height: 2.8rem !important;
+      padding: 0 !important;
+      label {
+        display: none !important;
+        padding: 0 !important;
+      }
+      select {
+        height: 2.8rem !important;
+        background-color: $black-color !important;
+        color: white !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    &__volume {
+      display: flex;
+      align-items: center;
+      label {
+        color: white;
+      }
+    }
+
+    &__speak-actions {
+      display: block;
+      b {
+        display: block;
+        cursor: pointer;
+      }
+      p {
+        color: $secondary-color;
+        font-size: 12px;
+        font-weight: bolder;
+        margin-top: 6px;
+        cursor: pointer;
+        &.cancel {
+          color: $cancel-color;
+        }
+      }
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 10px;
+      width: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: -15px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+      box-shadow: 1px 1px 1px transparent, 0px 0px 1px transparent; /* Add cool effects to your sliders! */
+    }
+
+    /* All the same stuff for Firefox */
+    input[type="range"]::-moz-range-thumb {
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      border: 1px solid #000000;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    /* All the same stuff for IE */
+    input[type="range"]::-ms-thumb {
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      border: 1px solid #000000;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 1.3px;
+      border: 0.2px solid $primary-color;
+    }
+
+    input[type="range"]::-moz-range-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 1.3px;
+      border: 0.2px solid $primary-color;
+    }
+
+    input[type="range"]::-ms-track {
+      width: 100%;
+      height: 3px;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 1.3px;
+      border: 0.2px solid $primary-color;
+    }
+
+    input[type="range"]::-ms-fill-lower {
+      background: transparent;
+      border: 0.2px solid transparent;
+      border-radius: 2.6px;
+    }
+    input[type="range"]:focus::-ms-fill-lower {
+      background: transparent;
+    }
+    input[type="range"]::-ms-fill-upper {
+      background: transparent;
+      border: 0.2px solid transparent;
+      border-radius: 2.6px;
+    }
   }
 }

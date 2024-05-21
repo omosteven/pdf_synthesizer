@@ -5,6 +5,10 @@ import PdfToAudio from "./PdfToAudio/PdfToAudio";
 import { PROCESSING_STAGES } from "./enum";
 
 import "./Main.scss";
+// import WebpageToAudio from "./WebpageToAudio/WebpageToAudio";
+import AudioToPdf from "./AudioToPdf/AudioToPdf";
+import DownloadWTAExtension from "./WebpageToAudio/DownloadWTAExtension/DownloadWTAExtension";
+// import {Helmet} from "react-helmet";
 
 const { CHOOSE_TOOL, WEB_TO_AUDIO, WEB_TO_PDF, PDF_TO_AUDIO, AUDIO_TO_PDF } =
   PROCESSING_STAGES;
@@ -16,6 +20,8 @@ const Main = () => {
     setStage(pickedTool);
   };
 
+  const isAppAnExtension = stage === WEB_TO_AUDIO || stage === WEB_TO_PDF;
+
   const renderBasedOnStage = () => {
     switch (stage) {
       case CHOOSE_TOOL:
@@ -24,14 +30,20 @@ const Main = () => {
         return <PdfToAudio />;
       case WEB_TO_AUDIO:
       case WEB_TO_PDF:
+        // return <WebpageToAudio />;
+      return <DownloadWTAExtension />;
       case AUDIO_TO_PDF:
-        return "";
+        return <AudioToPdf />;
       default:
-        return "";
+        return <ToolsList handlePickTool={handlePickTool} />;
     }
   };
 
-  return <div className="main-view">{renderBasedOnStage()}</div>;
+  return (
+    <div className={isAppAnExtension ? "" : `main-view`}>
+      {renderBasedOnStage()}
+    </div>
+  );
 };
 
 export default Main;

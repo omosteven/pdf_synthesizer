@@ -30,3 +30,25 @@ export const extractText = (file: any, callback: Function) => {
     callback(text, false, e);
   }
 };
+
+export const groupBySentences = (text) => {
+  const sentences = [];
+  let sentence = "";
+  let groupedWords = text?.split(" ");
+  let exemptions = ["Dr.", "Mr.", "Mrs.", "Miss."];
+
+  for (let i = 0; i < groupedWords?.length; i++) {
+    let word = groupedWords[i];
+    sentence += `${word} `;
+    if (
+      (word[word?.length - 1] === "." &&
+        exemptions?.includes(word) === false) ||
+      i === groupedWords?.length - 1
+    ) {
+      sentences.push(sentence);
+      sentence = "";
+    }
+  }
+
+  return sentences;
+};

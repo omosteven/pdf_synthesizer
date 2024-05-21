@@ -9,18 +9,18 @@ export const LANGUAGES = [
     variances: [
       {
         type: "AMERICAN",
-        name: "American English 1",
+        name: "American English - Male",
         lang: "en-US",
         gender: "MALE",
         speaker: "Alex",
       },
-      {
-        type: "AMERICAN",
-        name: "American English 2",
-        lang: "en-US",
-        gender: "MALE",
-        speaker: "Fred",
-      },
+      // {
+      //   type: "AMERICAN",
+      //   name: "American English 2",
+      //   lang: "en-US",
+      //   gender: "MALE",
+      //   speaker: "Fred",
+      // },
       {
         type: "AMERICAN",
         name: "American English - Female",
@@ -28,37 +28,37 @@ export const LANGUAGES = [
         gender: "FEMALE",
         speaker: "Samantha",
       },
-      {
-        type: "AMERICAN",
-        name: "American English - Female 2",
-        lang: "en-US",
-        gender: "FEMALE",
-        speaker: "Victoria",
-      },
+      // {
+      //   type: "AMERICAN",
+      //   name: "American English - Female 2",
+      //   lang: "en-US",
+      //   gender: "FEMALE",
+      //   speaker: "Victoria",
+      // },
       {
         type: "BRITISH",
-        name: "British English",
+        name: "British English - Male",
         lang: "en-GB",
         gender: "MALE",
         speaker: "Daniel",
       },
       {
         type: "SCOTISH",
-        name: "Scotish English",
+        name: "British English - Female",
         lang: "en-SCOTLAND",
         speaker: "Fiona",
         gender: "FEMALE",
       },
       {
         type: "AUSTRALIAN",
-        name: "Australian English",
+        name: "Australian English - Female",
         lang: "en-AU",
         speaker: "Karen",
         gender: "FEMALE",
       },
       {
         type: "INDIAN",
-        name: "Indian English",
+        name: "Indian English - Male",
         gender: "MALE",
         lang: "en-IN",
         speaker: "Rishi",
@@ -70,44 +70,46 @@ export const LANGUAGES = [
         lang: "en-IN",
         speaker: "Veena",
       },
-    ],
+    ]
   },
   {
     name: "Italian",
     variances: [
       {
         type: "ITALIAN",
-        name: "Original Italian 1",
-        speaker: "Alice",
-        lang: "it-IT",
-        gender: "FEMALE",
-      },
-      {
-        type: "ITALIAN",
-        name: "Original Italian 2",
+        name: "Original Italian - Male",
         speaker: "Luca",
         lang: "it-IT",
         gender: "MALE",
       },
+      {
+        type: "ITALIAN",
+        name: "Original Italian - Female ",
+        speaker: "Alice",
+        lang: "it-IT",
+        gender: "FEMALE",
+      },
+   
     ],
   },
   {
     name: "French",
     variances: [
       {
-        type: "CANADIAN",
-        name: "Canadian French",
-        speaker: "Amelie",
-        gender: "FEMALE",
-        lang: "fr-CA",
-      },
-      {
         type: "FRENCH",
-        name: "Original French",
+        name: "Original French - Male",
         speaker: "Thomas",
         gender: "MALE",
         lang: "fr-FR",
       },
+      {
+        type: "CANADIAN",
+        name: "Canadian French - Female",
+        speaker: "Amelie",
+        gender: "FEMALE",
+        lang: "fr-CA",
+      },
+     
     ],
   },
   {
@@ -137,14 +139,14 @@ export const LANGUAGES = [
       },
       {
         type: "SPANISH",
-        name: "Mexican Spanish 1",
+        name: "Mexican Spanish - Female",
         gender: "FEMALE",
         lang: "es-MX",
         speaker: "Juan",
       },
       {
         type: "SPANISH",
-        name: "Mexican Spanish 2",
+        name: "Mexican Spanish - Female(2)",
         gender: "FEMALE",
         lang: "es-MX",
         speaker: "Paulina",
@@ -157,14 +159,14 @@ export const LANGUAGES = [
     variances: [
       {
         type: "PORTUGUESE",
-        name: "Original Portuguese",
+        name: "Original Portuguese - Female",
         gender: "FEMALE",
         lang: "pt-PT",
         speaker: "Joana",
       },
       {
         type: "BRAZILIAN",
-        name: "Brazilian Portuguese",
+        name: "Brazilian Portuguese - Female",
         gender: "FEMALE",
         lang: "pt-BR",
         speaker: "Luciana",
@@ -172,12 +174,12 @@ export const LANGUAGES = [
     ],
   },
   {
-    name: "HINDU",
-    type: "Hindu",
+    name: "Hindu",
+    type: "HINDU",
     variances: [
       {
         type: "HINDU",
-        name: "Indian Hindu",
+        name: "Indian Hindu - Female",
         gender: "FEMALE",
         lang: "hi-IN",
         speaker: "Lekha",
@@ -190,7 +192,7 @@ export const LANGUAGES = [
     variances: [
       {
         type: "FINNISH",
-        name: "Finish",
+        name: "Finish - Male",
         gender: "MALE",
         lang: "fi-FI",
         speaker: "Satu",
@@ -203,7 +205,7 @@ export const LANGUAGES = [
     variances: [
       {
         type: "CHINEESE",
-        name: "Chineese",
+        name: "Chineese - Male",
         gender: "MALE",
         lang: "zh-CN",
         speaker: "Ting-Ting",
@@ -231,9 +233,9 @@ export const TOOLSLIST = [
     url: "c",
     action: WEB_TO_AUDIO,
   },
-  { name: "Webpage-to-PDF", url: "c", action: WEB_TO_PDF },
+  // { name: "Webpage-to-PDF", url: "c", action: WEB_TO_PDF },
   { name: "PDF-to-Audio", url: "c", action: PDF_TO_AUDIO },
-  { name: "Audio-to-PDF", url: "c", action: AUDIO_TO_PDF },
+  // { name: "Audio-to-PDF", url: "c", action: AUDIO_TO_PDF },
 ];
 
 export const STATUSES = {
@@ -243,3 +245,11 @@ export const STATUSES = {
   SUCCESS: "SUCCESS",
   NULL: "NULL",
 };
+
+
+export const SPEECH_STATUSES={
+  PAUSED:"PAUSED",
+  RESUMED:"RESUMED",
+  SPEAKING:"SPEAKING",
+  IDLE:"IDLE"
+}

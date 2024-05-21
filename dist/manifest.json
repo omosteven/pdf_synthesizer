@@ -1,10 +1,16 @@
 {
-    "version": "1.0.0",
-    "manifest_version": 3,
-    "name": "PDF Audio Reader Chrome Extension",
-    "description": "This is a Chrome extension built with React and TypeScript",
-    "action": {
-        "default_popup": "js/index.html",
-        "default_title": "React Chrome Extension"
-    }
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "name": "PDF Audio Reader Chrome Extension2",
+  "description": "This is a Chrome extension built with React and TypeScript",
+  "action": {
+    "default_popup": "js/index.html",
+    "default_title": "React Chrome Extension2"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+  "host_permissions": ["https://*/*"]
 }

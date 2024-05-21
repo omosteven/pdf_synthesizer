@@ -12,9 +12,9 @@ const ToolsList = (props: { handlePickTool: Function }) => {
           <ToolBox key={i} {...item} handlePickTool={handlePickTool} />
         ))}
       </section>
-      <p>
+      {/* <p>
         <strong>Sign Up</strong> or <strong>Login</strong> to save progress
-      </p>
+      </p> */}
     </div>
   );
 };
